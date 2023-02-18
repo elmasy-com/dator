@@ -1,0 +1,45 @@
+[package]
+name = "dator-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.dator]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "fuzz_ipv4"
+path = "fuzz_targets/fuzz_ipv4.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_ipv6"
+path = "fuzz_targets/fuzz_ipv6.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_domain"
+path = "fuzz_targets/fuzz_domain.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_email"
+path = "fuzz_targets/fuzz_email.rs"
+test = false
+doc = false
