@@ -3,6 +3,7 @@ name = "dator"
 version = "0.1.0"
 edition = "2021"
 description = "Data validator"
+homepage = "https://github.com/elmasy-com/dator"
 repository = "https://github.com/elmasy-com/dator"
 license-file = "LICENSE"
 
